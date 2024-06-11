@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/public//images/auriculares.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/style.css">    
+    <title>Mi Repertorio</title>
+</head>
+
+<body>
+    
+    <section id="hero">
+        <a href="/"><img src="./public/images/auriculares.png" alt="imagen auriculares"></a>
+        <h1><a href="/">Mi Repertorio</a></h1>
+    </section>
+
+    <section class="container p-5">
+        <form class="bg-dark-subtle p-3 rounded-3"  method="post" action="http://localhost:3010/cancion">
+
+            <div class="mb-3">
+                <label for="nombreCancion" class="form-label">Canción</label>
+                <input type="text" class="form-control" id="nombreCancion" name="nombreCancion" placeholder="Nombre de la canción" required>                
+            </div>
+
+            <div class="mb-3">
+                <label for="nombreArtista" class="form-label">Artista</label>
+                <input type="text" class="form-control" id="nombreArtista" name="nombreArtista" placeholder="Nombre del Artista" required>                
+            </div>
+
+            <div class="mb-3">
+                <label for="nombreTono" class="form-label">Tono</label>
+                <input type="text" class="form-control" id="nombreTono" name="nombreTono" placeholder="Tono de la canción" required>                
+            </div>
+            
+            <button id ="btnagregar" type="submit" class="btn btn-success">
+                <img id="btnAgregar" class="iconobBotones" src="/public/images/agregar.png" alt="icono agregar">                 
+                Agregar Canción
+            </button>
+            
+            <button id ="btneditar" type="submit" class="btn btn-warning">              
+                <img id="btnEditar" class="iconobBotones" src="/public/images/editar.png" alt="icono agregar">                 
+                Guardar Cambios
+            </button>
+
+        </form>
+    </section>
+
+    <section id="tabla" class="p-5">
+        <h2 class="text-center">Mis Canciones</h2>
+        <small id="mensaje"></small>
+        <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Canción</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Tono</th>
+                <th scope="col" class="text-center">Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+                
+              
+            </tbody>
+          </table>
+    </section>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Eliminar Cancion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Confirma que desea eliminar este registro ?
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <img class="iconobBotones" src="/public/images/auriculares.png" alt="icono auriculares">
+                    Cancelar
+                </button>
+
+                <button type="button" class="btn btn-danger" onclick="EliminarCancion()">
+                    <img class="iconobBotones" src="/public/images/eliminar.png" alt="icono eliminar"> 
+                    Confirmar
+                </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="/cssJs/bootstrap.js"></script>
+    <script src="/public/scripts/script.js"></script>
+
+</body>
+</html>
